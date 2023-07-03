@@ -1,0 +1,76 @@
+
+
+<!--Day 0,1,2,3,4,5,6 
+[events]="events"
+-->
+
+
+<div class="schedulerMain">
+    <div class="schedule_left">
+        <button (click)="closeSideBar()"
+            style="padding:10px;background:blue;color:white;border:1px solid blue;border-radius:4px;cursor:pointer">close
+            left side</button>
+    </div>
+    <div class="schedule_right" [ngClass]="{'full_width': IsScheduleExpanded}">
+        <kendo-scheduler 
+    startTime="08:00" 
+    endTime="18:00" 
+
+    [currentTimeMarker]="true" 
+    [slotDivisions]="2" 
+    [slotDuration]="60"
+
+    [editable]="true" 
+
+    [showWorkHours]="false" 
+    workDayStart="08:00" 
+    workDayEnd="15:00" 
+
+    [workWeekStart]="1"
+    [workWeekEnd]="5" 
+
+    [slotFill]="1" 
+
+    [loading]="false" 
+
+    [group]="group" 
+    [resources]="resources"
+
+    [kendoSchedulerBinding]="events"
+    timezone="Etc/UTC"
+    style="height: 800px;"
+
+    [columnWidth]="400"
+    
+    >
+    <!-- <ng-template kendoSchedulerToolbarTemplate>
+        <button kendoSchedulerPDFCommand>Export PDF</button>
+       <div kendoSchedulerToolbarNavigation></div>
+        <div kendoSchedulerToolbarViewSelector></div> 
+    </ng-template> -->
+
+    <!-- <ng-template kendoSchedulerToolbarTemplate>
+        <button kendoSchedulerPDFCommand>Export PDF</button>
+    </ng-template> -->
+
+    <kendo-scheduler-day-view> </kendo-scheduler-day-view>
+    <kendo-scheduler-month-view> </kendo-scheduler-month-view>
+    <kendo-scheduler-multi-day-view></kendo-scheduler-multi-day-view>
+    <kendo-scheduler-multi-week-view></kendo-scheduler-multi-week-view>
+    <kendo-scheduler-timeline-view></kendo-scheduler-timeline-view>
+    <kendo-scheduler-timeline-month-view></kendo-scheduler-timeline-month-view>
+    <kendo-scheduler-timeline-week-view></kendo-scheduler-timeline-week-view>
+    <kendo-scheduler-week-view> </kendo-scheduler-week-view>
+    <kendo-scheduler-work-week-view></kendo-scheduler-work-week-view>
+    <kendo-scheduler-agenda-view> </kendo-scheduler-agenda-view>
+
+   
+
+
+    <kendo-scheduler-pdf fileName="scheduler.pdf"> </kendo-scheduler-pdf>
+
+
+
+</kendo-scheduler>
+    </div>
+</div>
